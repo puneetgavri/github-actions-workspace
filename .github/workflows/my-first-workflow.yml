@@ -1,6 +1,10 @@
 name: Hello workflow
 
 on:
+ pull_request:
+  branches:
+    - 'main'
+    - 'develop'
  push:
   branches: 
    - 'main'
@@ -8,6 +12,8 @@ on:
   paths-ignore:
    - 'README.md'
  workflow_dispatch:
+ #schedule:
+   #- cron: "0 0 1 * *"
 
 jobs:
   hello-job:
