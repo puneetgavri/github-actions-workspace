@@ -1,6 +1,7 @@
 name: Hello workflow
 
 on:
+ push:
  workflow_dispatch:
 
 jobs:
