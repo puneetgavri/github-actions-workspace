@@ -1,22 +1,13 @@
 name: Hello workflow
 
 on:
- pull_request:
-  branches:
-    - 'main'
-    - 'develop'
- push:
-  branches: 
-   - 'main'
-   - 'develop'
-  paths-ignore:
-   - 'README.md'
  workflow_dispatch:
- #schedule:
-   #- cron: "0 0 1 * *"
+env:
+  APP_NAME: myapp
 
 jobs:
   hello-job:
     runs-on: ubuntu-latest
     steps:
       - run: echo "HELLO FROM MY FIRST WORKFLOW"
+      - run: echo "APP= $APP_NAME"
